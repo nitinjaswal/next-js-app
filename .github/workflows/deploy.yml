@@ -13,5 +13,5 @@ jobs:
     steps:
     - uses: actions/checkout@v4 # Check out the repository under $GITHUB_WORKSPACE, so your job can access it
     - run: docker build . -t jaswalnitin/next-js-app
-    - run: echo "${{secrets.DOCKERHUB_PASSWORD}}" | docker login -u ${{secrets.DOCKERHUB_USERNAME}} --password stdin
+    - run: echo "${{secrets.DOCKERHUB_PASSWORD}}" | docker login -u ${{secrets.DOCKERHUB_USERNAME}} --password-stdin
     - run: docker push jaswalnitin/next-js-app:latest # Push the Docker image to Docker Hub
